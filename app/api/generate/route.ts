@@ -3,7 +3,9 @@ import OpenAI from 'openai'
 import { FutureFormData, DreamFeedCard } from '@/lib/types'
 import { generateMockFutureResult } from '@/lib/generateMockFutureResult'
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+function getOpenAI() {
+  return new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+}
 
 function buildTextPrompt(f: FutureFormData): string {
   return `Ты — автор сервиса ЗавтраЯ. Создаёшь персонализированные «версии будущего».
@@ -29,6 +31,7 @@ function buildTextPrompt(f: FutureFormData): string {
 }
 
 async function analyzePhoto(base64: string): Promise<string> {
+  const openai = getOpenAI()
   const res = await openai.chat.completions.create({
     model: 'gpt-4o',
     messages: [{
@@ -56,6 +59,8 @@ export async function POST(req: NextRequest) {
   const base = generateMockFutureResult(formData)
 
   if (!process.env.OPENAI_API_KEY) return NextResponse.json(base)
+
+  const openai = getOpenAI()
 
   try {
     // Analyze photo + generate text in parallel

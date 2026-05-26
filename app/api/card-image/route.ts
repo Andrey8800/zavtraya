@@ -2,7 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import OpenAI, { toFile } from 'openai'
 import { PlaceOption, DreamOption } from '@/lib/types'
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+function getOpenAI() {
+  return new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+}
 
 // ─── Scene descriptions per card ─────────────────────────────────────────────
 
@@ -102,6 +104,8 @@ export async function POST(req: NextRequest) {
   // Person description fallback
   const personDesc = personDescription || 'A person'
   const prompt = buildScenePrompt(cardId, personDesc, place, dreams)
+
+  const openai = getOpenAI()
 
   try {
     // Convert base64 photo to file for gpt-image-1
