@@ -11,7 +11,7 @@ const inter = Inter({
 const defaultOgImage = '/api/og?place=У+моря&income=500+000+₽&months=18&dreams=Свобода+·+Путешествия+·+Свой+проект'
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zavtraya-production.up.railway.app'),
   title: 'ЗавтраЯ — Посмотри своё будущее через 5 лет',
   description:
     'Загрузи фото, выбери мечты — и ИИ покажет, какой может стать твоя жизнь, если начать менять её сегодня.',
