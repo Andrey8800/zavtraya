@@ -11,6 +11,7 @@ import ResultComparison from '@/components/ResultComparison'
 import DreamFeed from '@/components/DreamFeed'
 import FutureLetter from '@/components/FutureLetter'
 import ShareButtons from '@/components/ShareButtons'
+import PremiumOffer from '@/components/PremiumOffer'
 
 export default function ResultPage() {
   const [result, setResult] = useState<FutureResult | null>(null)
@@ -185,6 +186,12 @@ export default function ResultPage() {
 
         {/* Share */}
         <ShareButtons result={result} formData={formData} />
+
+        {/* Divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-4" />
+
+        {/* Premium offer */}
+        <PremiumOffer />
       </main>
     </div>
   )
