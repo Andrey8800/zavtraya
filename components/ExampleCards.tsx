@@ -30,7 +30,7 @@ const examples = [
     months: '24 мес',
     emoji: '🚀',
     preview: 'Клиенты пишут сами. Ты выбираешь, с кем работать.',
-    image: 'https://images.unsplash.com/photo-1553484771-371a605b060b?w=600&q=80&fit=crop',
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80&fit=crop',
   },
   {
     title: 'Дом на колёсах',
@@ -39,7 +39,7 @@ const examples = [
     months: '12 мес',
     emoji: '🏕️',
     preview: 'Новый город каждые три недели. Дом едет с тобой.',
-    image: 'https://images.unsplash.com/photo-1533591380348-14193f1de18f?w=600&q=80&fit=crop',
+    image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80&fit=crop',
   },
 ]
 
