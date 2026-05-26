@@ -135,7 +135,7 @@ function generateDreamFeed(
       title: 'Утро через 5 лет',
       text: getMorningText(place, dreams),
       caption: '07:23 · ' + placeShort[place],
-      gradient: 'from-violet-950 via-violet-900 to-indigo-900',
+      gradient: 'from-violet-800 via-violet-700 to-indigo-700',
       emoji: '🌅',
     },
     {
@@ -143,7 +143,7 @@ function generateDreamFeed(
       title: 'Работа из новой точки',
       text: getWorkText(dreams, income),
       caption: '11:47 · рабочий день',
-      gradient: 'from-blue-950 via-blue-900 to-cyan-900',
+      gradient: 'from-blue-800 via-blue-700 to-cyan-700',
       emoji: '💻',
     },
     {
@@ -151,7 +151,7 @@ function generateDreamFeed(
       title: 'Деньги и спокойствие',
       text: getMoneyText(income, barriers),
       caption: income + ' / мес',
-      gradient: 'from-emerald-950 via-teal-900 to-cyan-950',
+      gradient: 'from-emerald-800 via-teal-700 to-cyan-700',
       emoji: '✨',
     },
     {
@@ -159,7 +159,7 @@ function generateDreamFeed(
       title: 'Люди рядом',
       text: getPeopleText(dreams),
       caption: '15:30 · встреча с теми, кого выбрал',
-      gradient: 'from-pink-950 via-rose-900 to-purple-950',
+      gradient: 'from-pink-800 via-rose-700 to-purple-800',
       emoji: '🤝',
     },
     {
@@ -167,7 +167,7 @@ function generateDreamFeed(
       title: 'Место силы',
       text: getPlaceText(place),
       caption: placeShort[place] + ' · точка опоры',
-      gradient: 'from-amber-950 via-orange-900 to-red-950',
+      gradient: 'from-amber-700 via-orange-700 to-red-800',
       emoji: '🌍',
     },
     {
@@ -175,7 +175,7 @@ function generateDreamFeed(
       title: 'Вечер новой жизни',
       text: getEveningText(dreams, oldDream),
       caption: '21:15 · конец дня без сожалений',
-      gradient: 'from-purple-950 via-violet-900 to-fuchsia-950',
+      gradient: 'from-purple-800 via-violet-700 to-fuchsia-800',
       emoji: '🌙',
     },
   ]
