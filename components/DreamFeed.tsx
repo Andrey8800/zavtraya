@@ -70,7 +70,7 @@ function CardImage({
             <div className="w-10 h-10 rounded-full border-2 border-violet-500/30 border-t-violet-400 animate-spin" />
           </div>
           <p className="text-white/50 text-xs text-center px-4">
-            DALL·E рисует тебя<br />в этой сцене…
+            DALL·E 3 рисует<br />твою сцену…
           </p>
         </div>
       )}
@@ -170,7 +170,7 @@ export default function DreamFeed({ cards, photo, place, dreams, personDescripti
           transition={{ delay: 1 }}
           className="text-center text-xs text-white/25 mt-6"
         >
-          Каждая сцена генерируется отдельно · gpt-image-1 · ~10-15с на карточку
+          Каждая сцена генерируется отдельно · DALL·E 3 · ~10-15с на карточку
         </motion.p>
       )}
     </section>

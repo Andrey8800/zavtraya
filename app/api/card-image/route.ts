@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import OpenAI, { toFile } from 'openai'
+import OpenAI from 'openai'
 import { PlaceOption, DreamOption } from '@/lib/types'
 
 function getOpenAI() {
@@ -108,21 +108,17 @@ export async function POST(req: NextRequest) {
   const openai = getOpenAI()
 
   try {
-    // Convert base64 photo to file for gpt-image-1
-    const base64Data = photo.replace(/^data:image\/\w+;base64,/, '')
-    const buffer = Buffer.from(base64Data, 'base64')
-    const imageFile = await toFile(buffer, 'photo.png', { type: 'image/png' })
-
-    const response = await openai.images.edit({
-      model: 'gpt-image-1',
-      image: imageFile,
+    const response = await openai.images.generate({
+      model: 'dall-e-3',
       prompt,
       size: '1024x1024',
+      quality: 'standard',
+      n: 1,
     })
 
-    const b64 = response.data?.[0]?.b64_json
-    if (b64) {
-      return NextResponse.json({ imageUrl: `data:image/png;base64,${b64}` })
+    const url = response.data?.[0]?.url
+    if (url) {
+      return NextResponse.json({ imageUrl: url })
     }
     return NextResponse.json({ imageUrl: null })
   } catch (err: unknown) {
