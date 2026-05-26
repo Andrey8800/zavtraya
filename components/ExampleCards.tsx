@@ -10,36 +10,36 @@ const examples = [
     subtitle: 'Свобода · Путешествия',
     income: '300 000 ₽',
     months: '18 мес',
-    gradient: 'from-blue-950 via-cyan-900 to-teal-900',
     emoji: '🌊',
     preview: 'Кофе на рассвете. Волны за окном. Будильника нет.',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80&fit=crop',
   },
   {
     title: 'Удалённая работа',
     subtitle: 'Свой проект · Доход',
     income: '500 000 ₽',
     months: '18 мес',
-    gradient: 'from-violet-950 via-purple-900 to-indigo-900',
     emoji: '💻',
     preview: 'Ноутбук открыт. Проект приносит, а не только забирает.',
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&q=80&fit=crop',
   },
   {
     title: 'Свой проект',
     subtitle: 'Бизнес · Творчество',
     income: '1 000 000 ₽+',
     months: '24 мес',
-    gradient: 'from-amber-950 via-orange-900 to-rose-900',
     emoji: '🚀',
     preview: 'Клиенты пишут сами. Ты выбираешь, с кем работать.',
+    image: 'https://images.unsplash.com/photo-1553484771-371a605b060b?w=600&q=80&fit=crop',
   },
   {
     title: 'Дом на колёсах',
     subtitle: 'Свобода · Путешествия',
     income: '300 000 ₽',
     months: '12 мес',
-    gradient: 'from-emerald-950 via-teal-900 to-cyan-900',
     emoji: '🏕️',
     preview: 'Новый город каждые три недели. Дом едет с тобой.',
+    image: 'https://images.unsplash.com/photo-1533591380348-14193f1de18f?w=600&q=80&fit=crop',
   },
 ]
 
@@ -79,10 +79,16 @@ export default function ExampleCards() {
             >
               <Link href="/create">
                 <div className="glass rounded-2xl overflow-hidden border border-white/8 hover:border-white/15 transition-all duration-300 hover:-translate-y-1">
-                  {/* Gradient image area */}
-                  <div className={`h-40 bg-gradient-to-br ${ex.gradient} relative flex items-end p-4`}>
-                    <span className="absolute top-4 right-4 text-3xl">{ex.emoji}</span>
-                    <p className="text-xs text-white/60 italic leading-relaxed">{ex.preview}</p>
+                  {/* Photo area */}
+                  <div className="h-40 relative overflow-hidden">
+                    <img
+                      src={ex.image}
+                      alt={ex.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    <span className="absolute top-3 right-3 text-2xl">{ex.emoji}</span>
+                    <p className="absolute bottom-3 left-3 right-3 text-xs text-white/80 italic leading-relaxed">{ex.preview}</p>
                   </div>
 
                   {/* Content */}
